@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- This tag is ESSENTIAL for mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Apply the Inter font as the default */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* --- Fade-in Animation --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in-load {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        /* Initial state for scroll animations */
+        .fade-on-scroll {
+            opacity: 0;
+        }
+        
+        /* Class added by JS to trigger animation */
+        .fade-in-visible {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        /* Animation delays */
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .delay-5 { animation-delay: 1.0s; }
+        .delay-6 { animation-delay: 1.2s; }
+
+        /* --- Pookie Bow Animation --- */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1) rotate(-20deg);
+                opacity: 0.9;
+            }
+            50% {
+                transform: scale(1.2) rotate(-30deg);
+                opacity: 1;
+            }
+        }
+
+        .pookie-bow {
+            font-size: 5rem; 
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            animation: pulse 1.5s ease-in-out infinite;
+            transform: rotate(-20deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- 
+      AUDIO ELEMENTS
+      - These are your exact filenames.
+      - Make sure these files are in the same folder as this index.html file.
+    -->
+    <audio id="song-main" src="main song.mp3" preload="metadata" loop></audio>
+    <audio id="song-1" src="song 1.mp3" preload="metadata" loop></audio>
+    <audio id="song-2" src="song 2.mp3" preload="metadata" loop></audio>
+    <audio id="song-3" src="song3.mp3" preload="metadata" loop></audio>
+    <audio id="song-4" src="song 4.mp3" preload="metadata" loop></audio>
+    <!-- END OF AUDIO SECTION -->
+
+    <div class="container mx-auto p-5 max-w-4xl">
+
+        <!-- Header Section -->
+        <header class="text-center my-12 fade-in-load">
+            <!-- EDIT THIS: Change the title -->
+            <h1 class="text-5xl font-bold text-pink-600 mb-4">For my minahil</h1>
+            <p class="text-xl text-gray-600">A few of my favorite moments with you.</p>
+        </header>
+
+        <!-- Main Image Section -->
+        <!-- This 'data-song-id' links this picture to the 'song-main' <audio> tag -->
+        <section id="main-pic" data-song-id="song-main" class="mb-16 fade-on-scroll delay-1">
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden border-4 border-pink-500">
+                
+                <div class="relative">
+                    <!-- 
+                      IMAGE FIX FOR PREVIEW: 
+                      Replaced "main-photo.jpg" with a placeholder.
+                      This will be replaced by your REAL photo on your live GitHub site.
+                    -->
+                    <img 
+                      src="https://placehold.co/1200x800/fecdd3/db2777?text=Your+Main+Photo" 
+                      alt="A special moment" 
+                      class="w-full h-auto object-cover"
+                    >
+                    <div class="absolute top-0 left-0 pookie-bow">
+                        🎀
+                    </div>
+                </div>
+
+                <div class="p-6">
+                    <!-- EDIT THIS: Add your own caption -->
+                    <p class="text-center text-lg text-gray-700">"This day was perfect."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section class="mb-16 fade-on-scroll delay-2">
+            <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Our Story</h2>
+            <div class="bg-white rounded-lg shadow-xl p-8">
+                <!-- EDIT THIS: Write your story here -->
+                <p class="text-lg leading-relaxed mb-4">
+                    I still remember the day we first met...
+                </s:p>
+                <p class="text-lg leading-relaxed">
+                    Thank you for every laugh.
+                </p>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-6 text-gray-800 fade-on-scroll delay-3">A Few Highlights</h2>
+            
+            <div class="flex flex-col items-center gap-10">
+                
+                <!-- Image 1 -->
+                <div id="gallery-item-1" data-song-id="song-1" class="w-full max-w-lg bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer fade-on-scroll delay-3">
+                    <!-- 
+                      IMAGE FIX FOR PREVIEW: Replaced "photo1.jpg"
+                    -->
+                    <img src="https://placehold.co/600x400/fecdd3/db2777?text=Your+Photo+1" alt="Gallery image 1" class="w-full h-auto object-cover">
+                    <div class="p-4">
+                        <!-- EDIT THIS: Add your caption -->
+                        <p class="text-center text-gray-700">The beach trip!</p>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div id="gallery-item-2" data-song-id="song-2" class="w-full max-w-lg bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer fade-on-scroll delay-4">
+                    <!-- 
+                      IMAGE FIX FOR PREVIEW: Replaced "photo2.jpg"
+                    -->
+                    <img src="https://placehold.co/600x400/fecdd3/db2777?text=Your+Photo+2" alt="Gallery image 2" class="w-full h-auto object-cover">
+                    <div class="p-4">
+                        <!-- EDIT THIS: Add your caption -->
+                        <p class="text-center text-gray-700">That silly face you make.</p>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div id="gallery-item-3" data-song-id="song-3" class="w-full max-w-lg bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer fade-on-scroll delay-5">
+                    <!-- 
+                      IMAGE FIX FOR PREVIEW: Replaced "photo3.jpg"
+                    -->
+                    <img src="https://placehold.co/600x400/fecdd3/db2777?text=Your+Photo+3" alt="Gallery image 3" class="w-full h-auto object-cover">
+                    <div class="p-4">
+                        <!-- EDIT THIS: Add your caption -->
+                        <p class="text-center text-gray-700">Best dinner ever.</p>
+                    </div>
+                </div>
+                
+                <!-- Image 4 -->
+                <div id="gallery-item-4" data-song-id="song-4" class="w-full max-w-lg bg-white rounded-lg shadow-xl overflow-hidden transform transition duration-300 hover:scale-105 cursor-pointer fade-on-scroll delay-6">
+                    <!-- 
+                      IMAGE FIX FOR PREVIEW: Replaced "photo4.jpg"
+                    -->
+                    <img src="https://placehold.co/600x400/fecdd3/db2777?text=Your+Photo+4" alt="Gallery image 4" class="w-full h-auto object-cover">
+                    <div class="p-4">
+                        <!-- EDIT THIS: Add your caption -->
+                        <p class="text-center text-gray-700">Just us.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center my-12 text-gray-500 fade-on-scroll delay-6">
+            <!-- EDIT THIS: Change your name -->
+            <p>Made with ❤️ by Meesum</p>
+        </footer>
+
+    </div>
+
+    <!-- 
+      *************************************************
+      * JAVASCRIPT FOR ANIMATIONS AND SCROLLING MUSIC *
+      *************************************************
+    -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            // --- 1. Animation Code (For fade-in effects) ---
+            const animationObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-visible');
+                        animationObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 }); // 10% visible
+
+            document.querySelectorAll('.fade-on-scroll').forEach(el => {
+                animationObserver.observe(el);
+            });
+
+            // --- 2. Auto-Play Music Logic ---
+
+            // --- State Variables ---
+            let isAudioUnlocked = false; 
+            let currentSongToPlay = null; 
+            
+            // Get all your song elements
+            const songs = {
+                'song-main': document.getElementById('song-main'),
+                'song-1': document.getElementById('song-1'),
+                'song-2': document.getElementById('song-2'),
+                'song-3': document.getElementById('song-3'),
+                'song-4': document.getElementById('song-4')
+            };
+
+            // Get all your picture sections
+            const galleryItems = [
+                document.getElementById('main-pic'),
+                document.getElementById('gallery-item-1'),
+                document.getElementById('gallery-item-2'),
+                document.getElementById('gallery-item-3'),
+                document.getElementById('gallery-item-4')
+            ];
+            
+            // Function to pause all songs EXCEPT the one that's about to play
+            function pauseAllSongs(exceptThisOne = null) {
+                for (const songId in songs) {
+                    const song = songs[songId];
+                    if (song && song !== exceptThisOne && !song.paused) {
+                        song.pause();
+                        song.currentTime = 0;
+                    }
+                }
+            }
+            
+            // This is the function that tries to play the current song
+            function playCurrentSong() {
+                // We can only play if...
+                // 1. Audio is unlocked (user has clicked)
+                // 2. There is a song that is *supposed* to be playing
+                if (isAudioUnlocked && currentSongToPlay) {
+                    pauseAllSongs(currentSongToPlay); // Stop all other songs
+                    
+                    // Try to play it
+                    const playPromise = currentSongToPlay.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(error => {
+                            // Don't log errors, as browsers will complain
+                            // console.error("Audio play error:", error);
+                        });
+                    }
+                }
+            }
+
+            // This is the "tracker" that watches you scroll
+            const musicObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const songId = entry.target.dataset.songId;
+                    const songElement = songs[songId];
+
+                    if (!songElement) return;
+
+                    if (entry.isIntersecting) {
+                        // When a picture enters the screen...
+                        // Set it as the *next* song to play
+                        currentSongToPlay = songElement;
+                        // Try to play it (this will only work if audio is unlocked)
+                        playCurrentSong();
+                    } else {
+                        // When a picture leaves the screen...
+                        if (songElement) {
+                            songElement.pause();
+                            songElement.currentTime = 0;
+                        }
+                        // If the song that just left was the "current" one, set current to null
+                        if (currentSongToPlay === songElement) {
+                            currentSongToPlay = null;
+                        }
+                    }
+                });
+            }, { 
+                threshold: 0.5 // 50% of the picture must be visible
+            });
+
+            // This is the "unlock" function that runs ONCE
+            function unlockAudio() {
+                if (isAudioUnlocked) return; // Only run one time
+                
+                isAudioUnlocked = true;
+                
+                // Now that audio is unlocked, try to play
+                // whatever song is currently visible.
+                playCurrentSong();
+            }
+
+            // --- 3. Start Everything ---
+            
+            // Tell the browser to load all song files
+            for (const songId in songs) {
+                if (songs[songId]) {
+                    songs[songId].load();
+                }
+            }
+
+            // Start tracking all the gallery items
+            galleryItems.forEach(item => {
+                if (item) {
+                    musicObserver.observe(item);
+                }
+            });
+
+            // Add the "unlock" listeners. This will run *once*
+            // on the very first click, key press, or touch.
+            window.addEventListener('click', unlockAudio, { once: true });
+            window.addEventListener('keydown', unlockAudio, { once: true });
+            window.addEventListener('touchstart', unlockAudio, { once: true });
+
+        });
+    </script>
+</body>
+</html>
